@@ -1,9 +1,13 @@
+import meesho from "@/modules/meesho/store/meesho";
 import { createStore } from "vuex";
+import meesho from '@/modules/meesho/store/meesho.js'
 
 export default createStore({
   state: {},
   getters: {},
   mutations: {},
   actions: {},
-  modules: {},
+  modules: {
+    meesho: meesho
+  },
 });
