@@ -1,14 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import MeeshoModuleRoutes from "../modules/meesho/router";
-
+import SupplierModuleRoutes from '../modules/meesho/router.js'
 const routes = [
-  {
-    path: "/",
-    name: "home",
-    component: HomeView,
-  },
-   ...MeeshoModuleRoutes,
+  ...SupplierModuleRoutes,
 ];
 
 const router = createRouter({
