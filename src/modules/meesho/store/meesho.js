@@ -14,12 +14,12 @@ export default {
                 icon: 'bi bi-box-seam',
                 route: 'Order-OnHold', 
             },
-            // {
-            //     id: 3,
-            //     name: 'Returns',
-            //     icon: 'bi bi-truck',
-            //     route: 'Home',  
-            // },
+            {
+                id: 3,
+                name: 'Returns',
+                icon: 'bi bi-truck',
+                route: 'Return',  
+            },
             // {
             //     id: 4,
             //     name: 'Inventory',

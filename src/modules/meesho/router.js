@@ -24,6 +24,21 @@ export default [
                 name: 'Order-Pending',
                 component: () => import("./views/PendingPage.vue")
             },
+            {
+                path: '/return',
+                name: 'Return',
+                component: () => import("./views/Return/ReturnPage.vue")
+            },
+            {
+                path: '/return/overview',
+                name: 'Return-Overview',
+                component: () => import("./views/Return/OverviewPage.vue")
+            },
+            {
+                path: '/return/tracking',
+                name: 'Return-Tracking',
+                component: () => import("./views/Return/ReturnTracking.vue")
+            },
         ]
     }
 ]
