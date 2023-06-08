@@ -26,19 +26,40 @@ export default [
             },
             {
                 path: '/return',
-                name: 'Return',
-                component: () => import("./views/Return/ReturnPage.vue")
+                children: [
+                    {
+                        path: 'overview',
+                        name: 'Return-Overview',
+                        component: () => import("./views/Return/OverviewPage.vue")
+                    },
+                    {
+                        path: 'tracking',
+                        children: [
+                            {
+                                path: 'intransit',
+                                name: 'Return-Tracking-Intransit',
+                                component: () => import("./views/Return/IntransitPage.vue")
+                            },
+                            {
+                                path: 'outfordelivery',
+                                name: 'Return-Tracking-Outfordelivery',
+                                component: () => import("./views/Return/OutforDelivery.vue")
+                            },
+                            {
+                                path: 'delivered',
+                                name: 'Return-Tracking-Delivered',
+                                component: () => import("./views/Return/DeliveredPage.vue")
+                            },
+                            {
+                                path: 'lost',
+                                name: 'Return-Tracking-Lost',
+                                component: () => import("./views/Return/LostPage.vue")
+                            },
+                        ]
+                    },
+                ]
             },
-            {
-                path: '/return/overview',
-                name: 'Return-Overview',
-                component: () => import("./views/Return/OverviewPage.vue")
-            },
-            {
-                path: '/return/tracking',
-                name: 'Return-Tracking',
-                component: () => import("./views/Return/ReturnTracking.vue")
-            },
+
         ]
     }
 ]

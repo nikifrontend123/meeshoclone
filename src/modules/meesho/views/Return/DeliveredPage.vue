@@ -1,18 +1,18 @@
 <template>
     <div>
         <ReturnLinks></ReturnLinks>
-        iam return  aspage
-        <BottomNav></BottomNav>
+        <TrackingLinks></TrackingLinks>
+        <h1>DeliveredPage</h1>
     </div>
 </template>
 
 <script>
-import BottomNav from '@/components/common/BottomNav.vue';
 import ReturnLinks from './ReturnLinks.vue';
+import TrackingLinks from './TrackingLinks.vue';
 
     export default {
-    name: "ReturnPage",
-    components: { BottomNav, ReturnLinks }
+    name: "DeliveredPage",
+    components: { ReturnLinks, TrackingLinks }
 }
 </script>
 

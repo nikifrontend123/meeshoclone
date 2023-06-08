@@ -18,7 +18,7 @@ export default {
                 id: 3,
                 name: 'Returns',
                 icon: 'bi bi-truck',
-                route: 'Return',  
+                route: 'Return-Overview',  
             },
             // {
             //     id: 4,

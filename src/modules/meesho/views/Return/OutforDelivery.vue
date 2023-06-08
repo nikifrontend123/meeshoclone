@@ -1,16 +1,18 @@
 <template>
     <div>
         <ReturnLinks></ReturnLinks>
-        <h1>Iam Return Tracking</h1>
+        <TrackingLinks></TrackingLinks>
+        <h1>Iam out for delivery</h1>
     </div>
 </template>
 
 <script>
 import ReturnLinks from './ReturnLinks.vue';
+import TrackingLinks from './TrackingLinks.vue';
 
     export default {
-    name: "ReturnTracking",
-    components: { ReturnLinks }
+    name: "OutforDelivery",
+    components: { TrackingLinks, ReturnLinks }
 }
 </script>
 

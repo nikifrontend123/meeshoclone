@@ -1,18 +1,18 @@
 <template>
     <div>
         <ReturnLinks></ReturnLinks>
-        <h1>Iam Overview Page</h1>
-        <BottomNav></BottomNav>
+        <TrackingLinks></TrackingLinks>
+        <h1>LostPage</h1>
     </div>
 </template>
 
 <script>
-import BottomNav from '@/components/common/BottomNav.vue';
 import ReturnLinks from './ReturnLinks.vue';
+import TrackingLinks from './TrackingLinks.vue';
 
 export default {
-    name: "OverviewPage",
-    components: { ReturnLinks, BottomNav }
+    name: "LostPage",
+    components: { ReturnLinks, TrackingLinks }
 }
 </script>
 
