@@ -24,6 +24,7 @@ export default [
                 name: 'Order-Pending',
                 component: () => import("./views/PendingPage.vue")
             },
+             
         ]
     }
 ]

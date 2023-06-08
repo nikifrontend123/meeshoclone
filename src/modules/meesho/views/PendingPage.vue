@@ -51,8 +51,8 @@
         </div>
 
         <div class="d-flex justify-content-evenly bg-light w-100">
-            <button class="btn btn-dark rounded-0 w-25" data-bs-toggle="offcanvas" data-bs-target="#sla" aria-controls="sla"
-                id="button-addon1">SLA</button>
+            <button class="btn btn-dark rounded-0 w-25 " data-bs-toggle="offcanvas" data-bs-target="#sla"
+                aria-controls="sla" id="button-addon1">SLA</button>
             <button class="btn btn-dark rounded-0 w-25" data-bs-toggle="offcanvas" data-bs-target="#dispatch"
                 aria-controls="dispatch" id="button-addon1">Dispatch</button>
             <button class="btn btn-dark rounded-0 w-25" data-bs-toggle="offcanvas" data-bs-target="#filter"
@@ -97,7 +97,7 @@
                 </div>
                 <div class="offcanvas-body  bg-light">
                     <div class="">
-                        <ul class="nav nav-tabs d-flex justify-content-evenly">
+                        <!-- <ul class="nav nav-tabs d-flex justify-content-evenly">
                             <li class="nav-item ">
                                 <a class="nav-link p-2 active" id="tab1" data-bs-toggle="tab" href="#content1">SLA
                                     Status</a>
@@ -121,6 +121,34 @@
                             <div class="tab-pane fade" id="content3">
                                 <DispatchPage></DispatchPage>
                             </div>
+                        </div> -->
+                        <div class="d-flex align-items-start">
+                            <div class="nav flex-column nav-tabs me-3" id="v-tabs-tab" role="tablist"
+                                aria-orientation="vertical">
+                                <button class="nav-link active" id="v-tabs-home-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-tabs-home" type="button" role="tab" aria-controls="v-tabs-home"
+                                    aria-selected="true">SLA</button>
+                                <button class="nav-link" id="v-tabs-profile-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-tabs-profile" type="button" role="tab" aria-controls="v-tabs-profile"
+                                    aria-selected="false">Dispatched</button>
+                                <button class="nav-link" id="v-tabs-order-tab" data-bs-toggle="pill"
+                                    data-bs-target="#v-tabs-order" type="button" role="tab" aria-controls="v-tabs-disabled"
+                                    aria-selected="false">Filter</button>
+                            </div>
+                            <div class="tab-content" id="v-tabs-tabContent">
+                                <div class="tab-pane fade show active" id="v-tabs-home" role="tabpanel"
+                                    aria-labelledby="v-tabs-home-tab" tabindex="0">
+                                    <SlaPage></SlaPage>
+                                </div>
+                                <div class="tab-pane fade" id="v-tabs-profile" role="tabpanel"
+                                    aria-labelledby="v-tabs-profile-tab" tabindex="0">
+                                    <DispatchPage></DispatchPage>
+                                </div>
+                                <div class="tab-pane fade" id="v-tabs-order" role="tabpanel"
+                                    aria-labelledby="v-tabs-order-tab" tabindex="0">
+                                    <DispatchPage></DispatchPage>
+                                </div>
+                            </div>
                         </div>
                         <div class="position-absolute bottom-0 w-100">
                             <div class="d-flex justify-content-evenly ">
@@ -131,6 +159,7 @@
                         </div>
 
                     </div>
+
 
                 </div>
             </div>
