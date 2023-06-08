@@ -1,24 +1,24 @@
 export default {
     namespaced: true,
-    state:{
+    state: {
         bottomNavMenuItems: [
             {
                 id: 1,
                 name: 'Home',
                 icon: 'bi bi-journal-plus',
-                route: 'Home', 
+                route: 'Home',
             },
             {
                 id: 2,
                 name: 'Order',
                 icon: 'bi bi-box-seam',
-                route: 'Order-OnHold', 
+                route: 'Order-OnHold',
             },
             {
                 id: 3,
                 name: 'Returns',
                 icon: 'bi bi-truck',
-                route: 'Return-Overview',  
+                route: 'Return-Overview',
             },
             // {
             //     id: 4,
@@ -33,12 +33,30 @@ export default {
             //     route: 'Home', 
             // },
         ],
+        orders: [
+            {
+                id: 1,
+                oid: '1325462',
+                name: 'Stylish western girl dress',
+                img: 'https://images.meesho.com/images/products/192854756/nfqbt_400.webp',
+                qty: '1',
+                size: 'S',
+                skuId: 'DNB109',
+                meeshoid: '8e452xw',
+                suborderid: '1235464',
+                date: '10 Jun',
+                time: '10.38 am'
+            },
+        ]
     },
-    getters:{
+    getters: {
         getBottomNavMenuItems(state) {
             return state.bottomNavMenuItems;
         },
+        getOrders(state) {
+            return state.orders;
+        }
     },
-    mutations:{},
-    actions:{}
+    mutations: {},
+    actions: {}
 }

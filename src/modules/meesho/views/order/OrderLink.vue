@@ -6,9 +6,12 @@
                 :to="{ name: 'Order-OnHold' }">On Hold</RouterLink>
             <RouterLink class="nav-link " :class="currentRouteName === 'Order-Pending' ? 'active' : ''"
                 :to="{ name: 'Order-Pending' }">Pending</RouterLink>
-            <!-- <RouterLink class="nav-link " :class="currentRouteName === 'DeliveriesPage' ? 'active' : ''" to="/DeliveriesPage">Ready To Ship</RouterLink>
-            <RouterLink class="nav-link " :class="currentRouteName === 'DeliveriesPage' ? 'active' : ''" to="/DeliveriesPage">Shipped</RouterLink>
-            <RouterLink class="nav-link " :class="currentRouteName === 'DeliveriesPage' ? 'active' : ''" to="/DeliveriesPage">Cancelled</RouterLink> -->
+            <RouterLink class="nav-link " :class="currentRouteName === 'Order-ReadyToShip' ? 'active' : ''"
+                :to="{ name: 'Order-ReadyToShip' }">Ready To Ship</RouterLink>
+            <RouterLink class="nav-link " :class="currentRouteName === 'Order-Shipped' ? 'active' : ''"
+                :to="{name: 'Order-Shipped'}">Shipped</RouterLink>
+            <RouterLink class="nav-link " :class="currentRouteName === 'Order-Cancelled' ? 'active' : ''"
+                :to="{name: 'Order-Cancelled'}">Cancelled</RouterLink>
         </div>
     </nav>
 </template>

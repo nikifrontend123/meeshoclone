@@ -1,5 +1,6 @@
 <template>
     <div>
+        
         <OrderLink></OrderLink>
         Order Page
         <BottomNav></BottomNav>
@@ -11,7 +12,7 @@ import BottomNav from '@/components/common/BottomNav.vue';
 import OrderLink from './OrderLink.vue';
 
 export default {
-    components: { BottomNav, OrderLink }
+    components: { BottomNav,  OrderLink }
 }
 </script>
 

@@ -12,17 +12,32 @@ export default [
             {
                 path: '/order/onhold',
                 name: 'Order',
-                component: () => import("./views/OrderPage.vue")
+                component: () => import("./views/order/OrderPage.vue")
             },
             {
                 path: '/order/onhold',
                 name: 'Order-OnHold',
-                component: () => import("./views/OnHoldPage.vue")
+                component: () => import("./views/order/OnHoldPage.vue")
             },
             {
                 path: '/order/pending',
                 name: 'Order-Pending',
-                component: () => import("./views/PendingPage.vue")
+                component: () => import("./views/order/PendingPage.vue")
+            },
+            {
+                path: '/order/readytoship',
+                name: 'Order-ReadyToShip',
+                component: () => import("./views/order/ReadytoshipPage.vue")
+            },
+            {
+                path: '/order/shipped',
+                name: 'Order-Shipped',
+                component: () => import("./views/order/ShippedPage.vue")
+            },
+            {
+                path: '/order/cancelled',
+                name: 'Order-Cancelled',
+                component: () => import("./views/order/CancelledPage.vue")
             },
             {
                 path: '/return',
