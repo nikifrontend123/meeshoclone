@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="d-flex justify-content-between">
+        <div class="">
             <div class="form-floating mb-3">
                 <input type="date" class="form-control" v-model="startdate" id="floatingInput">
                 <label for="floatingInput">Start Date</label>
