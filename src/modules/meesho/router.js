@@ -6,8 +6,13 @@ export default [
         children: [
             {
                 path: '/',
+                name: 'Login',
+                component: () => import("@/views/LoginPage.vue")
+            },
+            {
+                path: '/home',
                 name: 'Home',
-                component: () => import("./views/HomePage.vue")
+                component: () => import("./views/dashboard/HomePage.vue")
             },
             {
                 path: '/order/onhold',
@@ -73,7 +78,57 @@ export default [
                         ]
                     },
                 ]
+
             },
+            {
+                path: '/inventory',
+                children: [
+                    {
+                        path: 'active',
+                        children: [
+                            {
+                                path: 'stock',
+                                name: 'Inventory-Active-Stock',
+                                component: () => import("./views/inventory/AllStockPage.vue")
+                            },
+                            {
+                                path: 'outofstock',
+                                name: 'Inventory-Active-OutOfStock',
+                                component: () => import("./views/inventory/OutOfStockPage.vue")
+                            },
+                            {
+                                path: 'lowstock',
+                                name: 'Inventory-Active-LowStock',
+                                component: () => import("./views/inventory/LowStockPage.vue")
+
+                            },
+                        ]
+                    },
+                    {
+                        path: '/inventory/pending',
+                        name: 'Inventory-Pending',
+                        component: () => import("./views/inventory/PendingPage.vue")
+                    },
+                    {
+                        path: '/inventory/blocked',
+                        name: 'Inventory-Blocked',
+                        component: () => import("./views/inventory/BlockedPage.vue")
+                    },
+                    {
+                        path: '/inventory/paused',
+                        name: 'Inventory-Paused',
+                        component: () => import("./views/inventory/PausedPage.vue")
+                    },
+                ]
+
+            },
+            {
+                path: '/menu',
+                name: 'Menu',
+                component: () => import("./views/menu/MenuPage.vue")
+            },
+
+
 
         ]
     }

@@ -20,18 +20,40 @@ export default {
                 icon: 'bi bi-truck',
                 route: 'Return-Overview',
             },
-            // {
-            //     id: 4,
-            //     name: 'Inventory',
-            //     icon: 'bi bi-x-octagon',
-            //     route: 'Home', 
-            // },
-            // {
-            //     id: 5,
-            //     name: 'Menu',
-            //     icon: 'bi bi-journal-check',
-            //     route: 'Home', 
-            // },
+            {
+                id: 4,
+                name: 'Inventory',
+                icon: 'bi bi-x-octagon',
+                route: 'Inventory-Active-Stock', 
+            },
+            {
+                id: 5,
+                name: 'Menu',
+                icon: 'bi bi-journal-check',
+                route: 'Menu', 
+            },
+        ],
+        dashboardStats: [
+            {
+                name: 'Pending Orders',
+                value: '8',
+            },
+            {
+                name: 'Downloads Labels',
+                value: '0',
+            },
+            {
+                name: 'Out of Stock',
+                value: '28',
+            },
+            {
+                name: 'Low Stock',
+                value: '130',
+            },
+            {
+                name: 'Barcoded Packets',
+                value: 'Scan Now',
+            }
         ],
         orders: [
             {
@@ -53,9 +75,6 @@ export default {
         getBottomNavMenuItems(state) {
             return state.bottomNavMenuItems;
         },
-        getOrders(state) {
-            return state.orders;
-        }
     },
     mutations: {},
     actions: {}
