@@ -75,6 +75,12 @@ export default {
         getBottomNavMenuItems(state) {
             return state.bottomNavMenuItems;
         },
+        getOrders(state) {
+            return state.orders;
+        },
+        getDashboardStats(state) {
+            return state.dashboardStats;
+        }
     },
     mutations: {},
     actions: {}
