@@ -12,7 +12,7 @@
                 <div class="w-100">
                     <h6 class="my-2">{{ inventory.name }}</h6>
                     <div class="d-flex">
-                        <div class="w-30">
+                        <div class="">
                             <img :src="inventory.img" style="height:100px; width:100px">
                         </div>
                         <div class="ms-2 w-75">
@@ -44,8 +44,8 @@
                         <p class="m-0">Out of Stock <span class="text-danger">{{ inventory.outofstock }} SKUs</span></p>
                         <p class="m-0">Low Stock <span class="text-danger">{{ inventory.lowstock }} SKUs</span></p>
                     </div>
-                    <button class="btn btn-secondary"><i class="bi bi-airplane-fill"></i> Boost</button>
-                    <button class="btn btn-primary" @click="showInventory(inventory)">View Products</button>
+                    <button class="btn btn-secondary" @click="showInventory(inventory)"><i class="bi bi-airplane-fill"></i> Boost</button>
+                    <button class="btn btn-primary">View Products</button>
                 </div>
             </div>
 

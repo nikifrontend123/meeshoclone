@@ -112,7 +112,24 @@ export default [
                     {
                         path: '/inventory/blocked',
                         name: 'Inventory-Blocked',
-                        component: () => import("./views/inventory/BlockedPage.vue")
+                        // component: () => import("./views/inventory/BlockedPage.vue"),
+                        children:[
+                            {
+                                path: 'duplicate',
+                                name:'Inventory-Blocked-Duplicate',
+                                component:() => import("./views/inventory/DuplicatePage.vue")
+                            },
+                            {
+                                path: 'poorquality',
+                                name:'Inventory-Blocked-PoorQuality',
+                                component:() => import("./views/inventory/PoorPage.vue")
+                            },
+                            {
+                                path: 'other',
+                                name:'Inventory-Blocked-Other',
+                                component:() => import("./views/inventory/OtherPage.vue")
+                            },
+                        ]
                     },
                     {
                         path: '/inventory/paused',

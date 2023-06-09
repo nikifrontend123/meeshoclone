@@ -176,6 +176,7 @@ export default {
         },
         getDashboardStats(state) {
             return state.dashboardStats;
+        },
         getReturnSummries(state) {
             return state.returnSummries;
         },
@@ -192,6 +193,7 @@ export default {
             return state.activeInventory;
         }
     },
+    
     mutations: {
         selectCanvas(state, canvas) {
             state.activeCanvas = canvas;

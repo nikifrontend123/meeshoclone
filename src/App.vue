@@ -8,5 +8,9 @@
     text-decoration: none;
     color: black;
   }
+
+  .overflow-x-scroll{
+    overflow-x: scroll;
+  }
 </style>
  

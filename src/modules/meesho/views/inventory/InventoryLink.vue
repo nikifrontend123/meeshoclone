@@ -7,7 +7,7 @@
             <RouterLink class="nav-link " :class="currentRouteName('Inventory-Pending') ? 'active' : ''"
                 :to="{ name: 'Inventory-Pending' }">Active Pending</RouterLink>
             <RouterLink class="nav-link " :class="currentRouteName('Inventory-Blocked') ? 'active' : ''"
-                :to="{ name: 'Inventory-Blocked' }">Blocked</RouterLink>
+                :to="{ name: 'Inventory-Blocked-Duplicate' }">Blocked</RouterLink>
             <RouterLink class="nav-link " :class="currentRouteName('Inventory-Paused') ? 'active' : ''"
                 :to="{ name: 'Inventory-Paused' }">Paused</RouterLink>
         </div>

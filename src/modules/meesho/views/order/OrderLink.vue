@@ -1,17 +1,13 @@
 <template>
     <nav>
-        <div class="nav nav-tabs py-2 w-100 d-flex justify-content-evenly overflow-x-scroll"
+        <div class="nav nav-tabs py-2 d-flex overflow-x-scroll flex-nowrap ws-nowarp align-items-center"
             style="font-size: 12px; font-weight: 500;" id="nav-tab" role="tablist">
-            <RouterLink class="nav-link " :class="currentRouteName === 'Order-OnHold' ? 'active' : ''"
-                :to="{ name: 'Order-OnHold' }">On Hold</RouterLink>
-            <RouterLink class="nav-link " :class="currentRouteName === 'Order-Pending' ? 'active' : ''"
-                :to="{ name: 'Order-Pending' }">Pending</RouterLink>
-            <RouterLink class="nav-link " :class="currentRouteName === 'Order-ReadyToShip' ? 'active' : ''"
-                :to="{ name: 'Order-ReadyToShip' }">Ready To Ship</RouterLink>
-            <RouterLink class="nav-link " :class="currentRouteName === 'Order-Shipped' ? 'active' : ''"
-                :to="{name: 'Order-Shipped'}">Shipped</RouterLink>
-            <RouterLink class="nav-link " :class="currentRouteName === 'Order-Cancelled' ? 'active' : ''"
-                :to="{name: 'Order-Cancelled'}">Cancelled</RouterLink>
+            <RouterLink 
+                v-for="(link, index) in links" :key="index" class="nav-link ws-nowarp"
+                :class="currentRouteName === link.route ? 'active' : ''" 
+                :to="{ name: link.route }">
+                {{ link.label }}
+            </RouterLink>
         </div>
     </nav>
 </template>
@@ -19,6 +15,17 @@
 <script>
 export default {
     props: ['active'],
+    data() {
+        return {
+            links: [
+                { route: 'Order-OnHold', label: 'On Hold' },
+                { route: 'Order-Pending', label: 'Pending' },
+                { route: 'Order-ReadyToShip', label: 'Ready To Ship' },
+                { route: 'Order-Shipped', label: 'Shipped' },
+                { route: 'Order-Cancelled', label: 'Cancelled' }
+            ]
+        }
+    },
     computed: {
         currentRouteName() {
             return this.$route.name;
@@ -27,3 +34,9 @@ export default {
     }
 }
 </script>
+
+<style>
+    .ws-nowarp {
+        white-space: nowrap;
+    }
+</style>
