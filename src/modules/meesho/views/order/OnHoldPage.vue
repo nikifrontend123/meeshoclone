@@ -17,14 +17,14 @@
                 </div>
                 <div class="offcanvas-body">
                     <div class="container">
-                        <div class="form-check fs-4">
+                        <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
                                 value="SKU ID" v-model="selectedOption" data-bs-dismiss="offcanvas">
                             <label class="form-check-label" for="flexRadioDefault1">
                                 SKU ID
                             </label>
                         </div>
-                        <div class="form-check fs-4">
+                        <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
                                 value="MEESHO ID" v-model="selectedOption" data-bs-dismiss="offcanvas">
                             <label class="form-check-label" for="flexRadioDefault2">

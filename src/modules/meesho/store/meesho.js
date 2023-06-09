@@ -63,11 +63,56 @@ export default {
                 img: 'https://images.meesho.com/images/products/192854756/nfqbt_400.webp',
                 qty: '1',
                 size: 'S',
-                skuId: 'DNB109',
+                skuid: 'DNB109',
                 meeshoid: '8e452xw',
                 suborderid: '1235464',
                 date: '10 Jun',
-                time: '10.38 am'
+                time: '10.38 am',
+                label:'Downloaded',
+                partner:'PocketShip'
+            },
+            {
+                id: 2,
+                oid: '1325462',
+                name: 'Stylish western girl dress',
+                img: 'https://images.meesho.com/images/products/191979382/bf6sa_400.webp',
+                qty: '1',
+                size: 'S',
+                skuid: 'DNB109',
+                meeshoid: '8e452xw',
+                suborderid: '1235464',
+                date: '10 Jun',
+                time: '10.38 am',
+                label:'Downloaded',
+                partner:'Shadowfax'
+            },
+        ],
+        inventory:[
+            {
+                id:1,
+                name:'Pretty Partywear Women Top & Bottom Sets',
+                img:'https://images.meesho.com/images/products/192854756/nfqbt_400.webp',
+                catalogid:'320451',
+                category:'Top & Bottom Sets',
+                sku:'4',
+                ratings:'4',
+                order:'923',
+                outofstock:'0',
+                lowstock:'3',
+                activation:'Delayed'
+            },
+            {
+                id:2,
+                name:'Partywear Women Top',
+                img:'https://images.meesho.com/images/products/191979382/bf6sa_400.webp',
+                catalogid:'933451',
+                category:'Top Sets',
+                sku:'5',
+                ratings:'3.7',
+                order:'623',
+                outofstock:'0',
+                lowstock:'5',
+                activation:'Delayed'
             },
         ],
         returnSummries: [
@@ -119,7 +164,8 @@ export default {
             },
 
         ],
-        activeCanvas: {}
+        activeCanvas: {},
+        activeInventory:{},
     },
     getters: {
         getBottomNavMenuItems(state) {
@@ -130,7 +176,6 @@ export default {
         },
         getDashboardStats(state) {
             return state.dashboardStats;
-        },
         getReturnSummries(state) {
             return state.returnSummries;
         },
@@ -140,6 +185,12 @@ export default {
         getActiveCanvas(state) {
             return state.activeCanvas;
         },
+        getInventories(state){
+            return state.inventory;
+        },
+        getActiveInventory(state){
+            return state.activeInventory;
+        }
     },
     mutations: {
         selectCanvas(state, canvas) {
@@ -148,6 +199,12 @@ export default {
         hideCanvas(state) {
             state.activeCanvas = {};
         },
+        selectInventory(state, inventory){
+            state.activeInventory = inventory;
+        },
+        hideInventory(state){
+            state.activeInventory = {};
+        }
     },
     actions: {
         selectCanvas({ commit }, canvas) {
@@ -156,5 +213,11 @@ export default {
         hideCanvas({ commit }) {
             commit("hideCanvas");
         },
+        selectInventory({commit}, inventory){
+            commit('selectInventory', inventory);
+        },
+        hideInventory({commit}){
+            commit('hideInventory');
+        }
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="padding-bottom: 100px;">
         <OrderLink></OrderLink>
         <div class="">
             <div class="">
@@ -75,10 +75,10 @@
                     </div>
                 </div>
                 <!-- --------------------------------. -->
-                <div class="offcanvas offcanvas-bottom " style="height:30vh !important;" data-bs-scroll="true"
+                <div class="offcanvas offcanvas-bottom " style="height:40vh !important;" data-bs-scroll="true"
                     data-bs-backdrop="false" tabindex="-1" id="dispatch" aria-labelledby="dispatch">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="dispatch">Select Search ID</h5>
+                        <h5 class="offcanvas-title" id="dispatch">Dispatch Date</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body bg-light ">
@@ -145,21 +145,56 @@
             </div>
         </div>
 
-        <div class="container mt-4 card" v-for="(order, index) in orders" :key="index">
-            <div class="d-flex justify-content-between">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Order No:{{ order.oid }}
+        <div class="container mt-4">
+            <div class="container bg-secondary">
+                <div class="form-check py-2">
+                    <input class="form-check-input" type="checkbox" name="SELECT" id="SELECT">
+                    <label class="form-check-label" for="SELECT">
+                        SELECT ALL ORDERS
                     </label>
                 </div>
-                <p></p>
-                <span>{{ order.date }} {{ order.time }}</span>
             </div>
-            <div class="">
-                <h6>{{ order.name }}</h6>
-                <div class="">
-                    <img :src="order.img" style="height:100px; width:100px">
+            <div class="container  border" v-for="(order, index) in orders" :key="index">
+                <div class="d-flex justify-content-between">
+                    <div class="form-check py-2">
+                        <input class="form-check-input" type="checkbox" name="Order" id="Order">
+                        <label class="form-check-label" for="Order">
+                            Order No:{{ order.oid }}
+                        </label>
+                    </div>
+                    <p></p>
+                    <span class="py-2">{{ order.date }} {{ order.time }}</span>
+                </div>
+                <div class="w-100">
+                    <h6 class="my-2">{{ order.name }}</h6>
+                    <div class="d-flex">
+                        <div class="w-30">
+                            <img :src="order.img" style="height:100px; width:100px">
+                        </div>
+                        <div class="ms-2 w-75">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-column">
+                                    <p class="m-0">Quntity</p>
+                                    <p class="m-0">Size</p>
+                                    <p class="m-0">SKU ID</p>
+                                    <p class="m-0">Meesho ID</p>
+                                    <p class="m-0">Sub-Order ID</p>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 text-end">{{ order.qty }} Unit</p>
+                                    <p class="m-0 text-end">{{ order.size }}</p>
+                                    <p class="m-0 text-end">{{ order.skuid }}</p>
+                                    <p class="m-0 text-end">{{ order.meeshoid }}</p>
+                                    <p class="m-0 text-end">{{ order.suborderid }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center py-2 border-top">
+                    <p>Disptached Date <span class="text-danger">{{ order.date }}</span></p>
+                    <button class="btn btn-secondary">Cancel</button>
+                    <button class="btn btn-primary">Accept</button>
                 </div>
             </div>
         </div>
