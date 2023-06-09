@@ -1,5 +1,5 @@
 <template>
-    <div :class="{ 'navbar-hidden': navbarHidden }">
+    <div>
         <RouterLink :to="{ name: menuItem.route }" :class="{ 'text-danger': currentRoute === menuItem.route }">
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <i class="fs-4" :class="menuItem.icon"></i>

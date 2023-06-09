@@ -22,6 +22,13 @@
             </div>
         </div>
         <div class="container py-2" style="margin-bottom: 5rem;">
+            <p class="lead m-0 fw-bold">Chart</p>
+            <small class="text-secondary">Learn to operate and grow your business on meesho</small>
+            <div class="">
+
+            </div>
+        </div>
+        <div class="container py-2" style="margin-bottom: 5rem;">
             <p class="lead m-0 fw-bold">Useful Links</p>
             <small class="text-secondary">Learn to operate and grow your business on meesho</small>
             <div class="">
@@ -51,12 +58,37 @@
 import BottomNav from '@/components/common/BottomNav.vue';
 
 export default {
-    components: { BottomNav },
+    components: { BottomNav},
     computed: {
         stats() {
             return this.$store.getters['meesho/getDashboardStats']
         }
-    }
+    },
+    data() {
+        return {
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [
+                    {
+                        label: 'Data 1',
+                        backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                        borderColor: 'rgba(0, 123, 255, 1)',
+                        data: [12, 19, 3, 5, 2, 3],
+                    },
+                    {
+                        label: 'Data 2',
+                        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        data: [2, 3, 20, 5, 1, 4],
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+            },
+        };
+    },
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
     <nav>
         <div class="nav nav-tabs py-2 w-100 d-flex justify-content-evenly overflow-x-scroll"
-            style="font-size: 14px; font-weight: 500;" id="nav-tab" role="tablist">
+            style="overflow-x: scroll;  font-size: 10px; font-weight: 500;" id="nav-tab" role="tablist">
             <RouterLink class="nav-link " :class="currentRouteName === 'Order-OnHold' ? 'active' : ''"
                 :to="{ name: 'Order-OnHold' }">On Hold</RouterLink>
             <RouterLink class="nav-link " :class="currentRouteName === 'Order-Pending' ? 'active' : ''"
