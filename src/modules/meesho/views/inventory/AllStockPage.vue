@@ -29,13 +29,6 @@
                             Newest First
                         </label>
                     </div>
-
-                    <!-- <div v-for="(s, index) in sort" :key="index" class="form-check">
-                        <input class="form-check-input" :type="s.type" :id="'flexCheckDefault' + index">
-                        <label class="form-check-label" :for="'flexCheckDefault' + index">
-                            {{ s.name }}
-                        </label>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -47,44 +40,6 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-
-                <!-- <div class="d-flex align-items-start">
-                    <div class="nav flex-column nav-pills me-3 bg-secondary" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="btn btn-secondary nav-link" :class="{ 'active': activeTab === 'Home' }" @click="setActiveTab('Home')"
-                            id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button"
-                            role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
-
-                        <button class="nav-link" :class="{ 'active': activeTab === 'Profile' }"
-                            @click="setActiveTab('Profile')" id="v-pills-profile-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                            aria-selected="false">Profile</button>
-
-                        <button class="nav-link" :class="{ 'active': activeTab === 'Messages' }"
-                            @click="setActiveTab('Messages')" id="v-pills-messages-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
-                            aria-selected="false">Messages</button>
-
-                        <button class="nav-link" :class="{ 'active': activeTab === 'Settings' }"
-                            @click="setActiveTab('Settings')" id="v-pills-settings-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
-                            aria-selected="false">Settings</button>
-                    </div>
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'Home' }" id="v-pills-home"
-                            role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">Home</div>
-
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'Profile' }" id="v-pills-profile"
-                            role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">Profile</div>
-
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'Messages' }"
-                            id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">Messages
-                        </div>
-
-                        <div class="tab-pane fade" :class="{ 'show active': activeTab === 'Settings' }"
-                            id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">Settings
-                        </div>
-                    </div>
-                </div> -->
 
             </div>
         </div>
@@ -223,7 +178,6 @@ export default {
                 { type: 'radio', name: 'Highest Estimated Orders' },
                 { type: 'radio', name: 'Newest First' },
             ],
-            activeTab: 'Home',
         }
     },
     components: { InventoryLink, ActiveLink, BottomNav },
@@ -244,48 +198,15 @@ export default {
         },
         hideInventory() {
             return this.$store.dispatch('meesho/hideInventory');
+        },
         showProduct(inventory) {
             return this.$store.dispatch('meesho/selectProduct', inventory);
         },
         hideProduct() {
             return this.$store.dispatch('meesho/hideProduct');
         },
-        setActiveTab(tab) {
-            this.activeTab = tab;
-        },
+       
     }
 }
 </script>
 
-<style lang="scss" scoped>
-.nav-link.active {
-    border-left: 2px solid red;
-}
-
-#experienceTab.nav-pills .nav-link.active {
-    color: var(--theme-yellow) !important;
-    background-color: transparent;
-    border-radius: 0px;
-    border-left: 3px solid var(--theme-yellow);
-}
-
-#experienceTab.nav-pills .nav-link {
-    border-radius: 0px;
-    border-left: 2px solid var(--theme-gray);
-}
-
-.date-range {
-    letter-spacing: 0.01em;
-    color: var(--theme-gray);
-}
-
-/* STUB  LINKS */
-a {
-    color: var(--theme-gray);
-    transition: 0.3s eas-in-out;
-}
-
-a:hover {
-    color: var(--theme-yellow);
-}
-</style>
