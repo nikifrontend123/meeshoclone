@@ -16,8 +16,6 @@ export default {
     // props: ['active'],
     methods: {
         currentRouteName(routeName) {
-            // console.log(this.$route);
-            // console.log(path);
             return this.$route.name.includes(routeName);
         }
 

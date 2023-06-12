@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="offcanvas offcanvas-bottom " style="height:35vh !important;" data-bs-scroll="true"
-                    data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling"
+                      tabindex="-1" id="offcanvasScrolling"
                     aria-labelledby="offcanvasScrollingLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Select Search ID</h5>
@@ -52,16 +52,16 @@
                 </div>
             </div>
 
-            <div class="d-flex justify-content-evenly bg-light w-100">
-                <button class="btn btn-dark rounded-0 w-25 " data-bs-toggle="offcanvas" data-bs-target="#sla"
+            <div class="d-flex justify-content-evenly w-100">
+                <button class="btn border w-100 rounded-0 w-25 " data-bs-toggle="offcanvas" data-bs-target="#sla"
                     aria-controls="sla" id="button-addon1">SLA</button>
-                <button class="btn btn-dark rounded-0 w-25" data-bs-toggle="offcanvas" data-bs-target="#dispatch"
+                <button class="btn border w-100 rounded-0 w-25" data-bs-toggle="offcanvas" data-bs-target="#dispatch"
                     aria-controls="dispatch" id="button-addon1">Dispatch</button>
-                <button class="btn btn-dark rounded-0 w-25" data-bs-toggle="offcanvas" data-bs-target="#filter"
+                <button class="btn border w-100 rounded-0 w-25" data-bs-toggle="offcanvas" data-bs-target="#filter"
                     aria-controls="filter" id="button-addon1">Filter</button>
 
                 <div class="offcanvas offcanvas-bottom " style="height:35vh !important;" data-bs-scroll="true"
-                    data-bs-backdrop="false" tabindex="-1" id="sla" aria-labelledby="sla">
+                      tabindex="-1" id="sla" aria-labelledby="sla">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="sla">Select Search ID</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -76,7 +76,7 @@
                 </div>
                 <!-- --------------------------------. -->
                 <div class="offcanvas offcanvas-bottom " style="height:40vh !important;" data-bs-scroll="true"
-                    data-bs-backdrop="false" tabindex="-1" id="dispatch" aria-labelledby="dispatch">
+                      tabindex="-1" id="dispatch" aria-labelledby="dispatch">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="dispatch">Dispatch Date</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -92,7 +92,7 @@
 
                 <!-- --------------------------------. -->
                 <div class="offcanvas offcanvas-bottom " style="height:80vh !important;" data-bs-scroll="true"
-                    data-bs-backdrop="false" tabindex="-1" id="filter" aria-labelledby="filter">
+                      tabindex="-1" id="filter" aria-labelledby="filter">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="filter">Filters</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

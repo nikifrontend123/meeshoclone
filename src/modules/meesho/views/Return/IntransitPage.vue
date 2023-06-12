@@ -3,11 +3,11 @@
         <ReturnLinks></ReturnLinks>
         <TrackingLinks></TrackingLinks>
         <div class="">
-            <div class="d-flex justify-content-evenly bg-light p-2">
-                <button class="btn btn-dark rounded-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            <div class="d-flex justify-content-evenly  ">
+                <button class="btn border rounded-0 w-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                     aria-controls="offcanvasExample"><i class="bi bi-calendar"></i> Return Created</button>
 
-                <button class="btn btn-dark rounded-0" data-bs-toggle="offcanvas" data-bs-target="#filter"
+                <button class="btn border rounded-0 w-100" data-bs-toggle="offcanvas" data-bs-target="#filter"
                     aria-controls="filter" id="button-addon1"><i class="bi bi-funnel"></i> Filters</button>
             </div>
 
@@ -28,7 +28,7 @@
 
             <div class="">
                 <div class="offcanvas offcanvas-bottom " style="height:80vh !important;" data-bs-scroll="true"
-                    data-bs-backdrop="false" tabindex="-1" id="filter" aria-labelledby="filter">
+                      tabindex="-1" id="filter" aria-labelledby="filter">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="filter">Filters</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -147,6 +147,66 @@
                     </div>
                 </div>
             </div>
+
+            <div v-for="(ss, index) in intransits" :key="index">
+                <h6 class="m-0 px-2 pb-2">{{ ss.name }}</h6>
+                <div class="d-flex container mt-3">
+                    <img :src="`${publicPath}${ss.img}`" style="width: 100px; height: 120px; object-fit: contain;" alt="">
+                    <div class="ms-2 w-75 ">
+                        <div v-for="(detail, index) in ss.details" :key="index"
+                            class="d-flex justify-content-between border-bottom py-1">
+                            <p class="m-0 text-secondary">{{ detail.name }}</p>
+                            <p class="m-0 text-end">{{ detail.value }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between p-2 border">
+                    <div style="width: 60%; font-size: 13px;">
+                        <p class="m-0"><Span class="text-secondary">Return Created :</Span> 9 june'23</p>
+                        <p class="m-0"><Span class="text-secondary">Courier Partner :</Span> Xpress Bees</p>
+                    </div>
+                    <button class="btn border fw-bold" @click="showIntransit(ss)">View Details</button>
+                </div>
+            </div>
+
+            <div v-if="Object.keys(activeIntransit).length !== 0">
+                <div class="offcanvas offcanvas-end show" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+                    aria-labelledby="staticBackdropLabel">
+                    <div class="d-flex justify-content-center align-items-center border-bottom">
+                        <div class=" w-100 d-flex justify-content-center align-items-center">
+                            <p class="fw-bold text-center m-0">Product Performance</p>
+                        </div>
+                        <div class="d-flex justify-content-end w-100">
+                            <button type="button" class="btn" @click="hideIntransit()"><i class="bi bi-x fs-3"></i></button>
+                        </div>
+                    </div>
+                    <div class="offcanvas-body ">
+                        <div class="">
+                            <p class="m-0" style="font-size: 13px;"><span class="text-secondary">Sub-Order ID :</span>{{
+                                activeIntransit.orderID }}</p>
+                            <p class="m-0 ">{{ activeIntransit.name }}</p>
+                            <div class="d-flex mt-2">
+                                <img :src="`${publicPath}${activeIntransit.img}`"
+                                    style="width: 100px; height: 120px; object-fit: contain;" alt="">
+                                <div class="ms-2 w-75 ">
+                                    <div v-for="(detail, index) in activeIntransit.details" :key="index"
+                                        class="d-flex justify-content-between border-bottom py-1">
+                                        <p class="m-0 text-secondary">{{ detail.name }}</p>
+                                        <p class="m-0 text-end">{{ detail.value }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <b>Shipment Details</b>
+                            <div v-for="(sd,index) in activeIntransit.shipmentdetails" :key="index" class="d-flex justify-content-between border-bottom">
+                                <p class="m-0 text-secondary py-1">{{sd.name}}</p>
+                                <p class="m-0 py-1">{{ sd.value }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <BottomNav></BottomNav>
@@ -162,7 +222,29 @@ import TrackingLinks from './TrackingLinks.vue';
 
 export default {
     name: "IntransitPage",
-    components: { TrackingLinks, ReturnLinks, ReturnCreadted, BottomNav }
+    components: { TrackingLinks, ReturnLinks, ReturnCreadted, BottomNav },
+    data() {
+        return {
+            publicPath: process.env.BASE_URL
+
+        }
+    },
+    computed: {
+        intransits() {
+            return this.$store.getters['meesho/getIntransits']
+        },
+        activeIntransit() {
+            return this.$store.getters['meesho/getActiveIntransit'];
+        },
+    },
+    methods: {
+        showIntransit(intransit) {
+            return this.$store.dispatch('meesho/selectIntransit', intransit);
+        },
+        hideIntransit() {
+            return this.$store.dispatch('meesho/hideIntransit');
+        },
+    }
 }
 </script>
 

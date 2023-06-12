@@ -3,8 +3,8 @@
         <InventoryLink></InventoryLink>
         <ActiveLink></ActiveLink>
         <div class="d-flex justify-content-center w-100">
-            <button class="btn btn-light w-100  border">Sort</button>
-            <button class="btn btn-light w-100  border">Filter</button>
+            <button class="btn w-100 border rounded-0">Sort</button>
+            <button class="btn w-100 border rounded-0">Filter</button>
         </div>
 
         <div class="">
@@ -16,25 +16,9 @@
                             <img :src="inventory.img" style="height:100px; width:100px">
                         </div>
                         <div class="ms-2 w-75">
-                            <div class="d-flex justify-content-between">
-                                <p class="m-0">Catalog ID</p>
-                                <p class="m-0 text-end">{{ inventory.catalogid }}</p>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p class="m-0">Category</p>
-                                <p class="m-0 text-end">{{ inventory.category }}</p>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p class="m-0">SKUs</p>
-                                <p class="m-0 text-end">{{ inventory.sku }}</p>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p class="m-0">Ratings</p>
-                                <p class="m-0 text-end">{{ inventory.ratings }} <sup><i class="bi bi-star-fill"></i></sup></p>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p class="m-0">Orders in last 30 days</p>
-                                <p class="m-0 text-end">{{ inventory.order }}</p>
+                            <div v-for="(d,key) in inventory.detail" :key="key" class="d-flex justify-content-between">
+                                <p class="m-0">{{ d.text }}</p>
+                                <p class="m-0 text-end">{{ d.number }} <sup><i :class="d.icon"></i></sup></p>
                             </div>
                         </div>
                     </div>

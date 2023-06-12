@@ -26,106 +26,105 @@
                 </div>
             </div>
         </div>
-        <div v-for="(ss, index) in returns" :key="index">
-            <p class="m-0 px-2">Sub-Order ID: {{ ss.orderID }}</p>
-            <h6 class="m-0 px-2 pb-2">{{ ss.name }}</h6>
-            <div class="d-flex container">
-                <img :src="`${publicPath}${ss.img}`" style="width: 140px; height: 180px; object-fit: contain;" alt="">
-                <div class="ms-2 w-75 ">
-                    <div class="d-flex justify-content-between border-bottom py-1">
-                        <p class="m-0 text-secondary">Quantity</p>
-                        <p class="m-0 text-end">{{ ss.qty }}</p>
-                    </div>
-                    <div class="d-flex justify-content-between border-bottom py-1">
-                        <p class="m-0 text-secondary">Size</p>
-                        <p class="m-0 text-end">{{ ss.size }}</p>
-                    </div>
-                    <div class="d-flex justify-content-between border-bottom py-1">
-                        <p class="m-0 text-secondary">SKU ID</p>
-                        <p class="m-0 text-end">{{ ss.Sku }}</p>
-                    </div>
-                    <div class="d-flex justify-content-between border-bottom py-1 ">
-                        <p class="m-0 text-secondary">Return type</p>
-                        <p class="m-0 text-end">{{ ss.returnType }}</p>
-                    </div>
-                    <div class="d-flex justify-content-between border-bottom py-1">
-                        <p class="m-0 text-secondary">Return Type</p>
-                        <p class="m-0 text-end ">{{ ss.qty }}</p>
-                    </div>
-                    <div class="d-flex justify-content-between border-bottom py-1">
-                        <p class="m-0 text-secondary">AWB</p>
-                        <p class="m-0 text-primary">{{ ss.awb }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between p-2 border">
-                <div>
-                    <p class="m-0 fw-bold">Status: <span class="fw-normal"> {{ ss.status }}</span></p>
-                    <p class="m-0 fw-bold">Courier Partner: <span class="fw-normal">{{ ss.courierBy }}</span></p>
-                </div>
-                <button class="btn btn-primary" @click="showCanvas(ss)">View Details</button>
-            </div>
+        <div class="d-flex justify-content-between border align-items-center p-2 btn" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" id="button-addon1">
+            <p class="m-0"><i class="bi bi-arrow-up-right"></i>Product Performance</p>
+            <i class="bi bi-chevron-right"></i>
         </div>
-        <div v-if="Object.entries(activeCanvas).length" class="offcanvas offcanvas-start show" tabindex="-1">
+        <div class="offcanvas offcanvas-bottom" style="height: 100%;" data-bs-scroll="true" data-bs-backdrop="false"
+            tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasExample25Label">Discription</h5>
-                <button type="button" class="btn-close" @click="hideCanvas" aria-label="Close"></button>
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Product Performance</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <p class="fw-bold">{{ activeCanvas.name }}</p>
-                <div class="d-flex border-bottom pb-2">
-                    <img :src="`${publicPath}${activeCanvas.img}`" style="width: 140px; height: 140px; object-fit: contain;"
-                        alt="">
-                    <div class="ms-2 ">
-                        <div class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">SKU ID</p>
-                            <p class="m-0 text-end">{{ activeCanvas.Sku }}</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">Category</p>
-                            <p class="m-0 text-end">{{ activeCanvas.category }}</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">Size</p>
-                            <p class="m-0 text-end">{{ activeCanvas.size }}</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">Quantity</p>
-                            <p class="m-0 text-end">{{ activeCanvas.qty }}</p>
+                <div class="d-flex w-100">
+                    <button class="btn border rounded-0 w-100"  data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><i class="bi bi-filter"></i>
+                        Filter</button>
+                    <button class="btn border rounded-0 w-100"><i class="bi bi-arrow-down-up"></i> Sort</button>
+                </div>
+                <div v-for="(ss, index) in returns" :key="index">
+                    <h6 class="m-0 px-2 pb-2">{{ ss.name }}</h6>
+                    <span class="bg-light rounded px-2 text-secondary">Dual Pricing Enabled</span>
+                    <div class="d-flex container mt-3">
+                        <img :src="`${publicPath}${ss.img}`" style="width: 100px; height: 120px; object-fit: contain;"
+                            alt="">
+                        <div class="ms-2 w-75 ">
+                            <div v-for="(detail, index) in ss.details" :key="index"
+                                class="d-flex justify-content-between border-bottom py-1">
+                                <p class="m-0 text-secondary">{{ detail.name }}</p>
+                                <p class="m-0 text-end">{{ detail.value }}</p>
+                            </div>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-between p-2 border">
+                        <div style="width: 60%;">
+                            <p class="m-0 fw-bold text-danger" style="font-size: 12px;">0.4% <span
+                                    class="fw-normal text-dark"> Return increased compared to the last month</span></p>
+                        </div>
+                        <button class="btn border fw-bold">View Details</button>
+                    </div>
                 </div>
-                <div class="mt-3">
-                    <h6>Shipment Details</h6>
-                    <div class="border p-2">
-                        <div class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">Sub-order ID</p>
-                            <p class="m-0 text-end">{{ activeCanvas.orderID }}</p>
+                <div class="offcanvas offcanvas-bottom " style="height:30vh !important;" data-bs-scroll="true"
+                    data-bs-backdrop="false" tabindex="-1" id="filter" aria-labelledby="filter">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="filter">Filters</h5>
+                        <button type="button" class="btn-close" @click="toggleInnerOffcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body bg-light">
+                        <div class="">
+                            <div class="d-flex align-items-start">
+                                <div class="nav flex-column nav-tabs me-3" id="v-tabs-tab" role="tablist"
+                                    aria-orientation="vertical">
+                                    <button class="nav-link " id="v-tabs-home-tab" data-bs-toggle="pill"
+                                        data-bs-target="#v-tabs-sla" type="button" role="tab" aria-controls="v-tabs-sla"
+                                        aria-selected="true">SLA</button>
+
+                                    <button class="nav-link " id="v-tabs-label-tab" data-bs-toggle="pill"
+                                        data-bs-target="#v-tabs-label" type="button" role="tab" aria-controls="v-tabs-label"
+                                        aria-selected="true">Label</button>
+
+                                    <button class="nav-link" id="v-tabs-profile-tab" data-bs-toggle="pill"
+                                        data-bs-target="#v-tabs-dispatched" type="button" role="tab"
+                                        aria-controls="v-tabs-dispatched" aria-selected="true">Dispatched</button>
+
+                                    <button class="nav-link" id="v-tabs-order-tab" data-bs-toggle="pill"
+                                        data-bs-target="#v-tabs-filter" type="button" role="tab"
+                                        aria-controls="v-tabs-filter" aria-selected="true">Filter</button>
+                                </div>
+                                <div class="tab-content" id="v-tabs-tabContent">
+                                    <div class="tab-pane fade show " id="v-tabs-sla" role="tabpanel"
+                                        aria-labelledby="v-tabs-home-tab" tabindex="0">
+                                        dsfdsf
+                                    </div>
+
+                                    <div class="tab-pane fade show active" id="v-tabs-label" role="tabpanel"
+                                        aria-labelledby="v-tabs-label-tab" tabindex="0">
+                                        dsfdsf
+                                    </div>
+
+                                    <div class="tab-pane fade" id="v-tabs-dispatched" role="tabpanel"
+                                        aria-labelledby="v-tabs-profile-tab" tabindex="0">
+                                        sdfdsf
+                                    </div>
+                                    <div class="tab-pane fade" id="v-tabs-filter" role="tabpanel"
+                                        aria-labelledby="v-tabs-order-tab" tabindex="0">
+                                        sdfdsf
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="position-absolute bottom-0 w-100">
+                                <div class="d-flex justify-content-evenly ">
+                                    <p class="m-0">0 Orders</p>
+                                    <button class="btn btn-primary rounded-0" data-bs-dismiss="offcanvas"> Clear
+                                        Filter</button>
+                                    <button class="btn btn-primary rounded-0" data-bs-dismiss="offcanvas"> Done</button>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">Return Type</p>
-                            <p class="m-0 text-end">{{ activeCanvas.returnType }}</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">Sub-order ID</p>
-                            <p class="m-0 text-end">{{ activeCanvas.orderID }}</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">Primary return Reason</p>
-                            <p class="m-0 text-end">{{ activeCanvas.reason }}</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">Secondary return Reason</p>
-                            <p class="m-0 text-end">{{ activeCanvas.reason }}</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">Return Shipping Fee</p>
-                            <p class="m-0 text-end">{{ activeCanvas.shippingFee }}</p>
-                        </div>
-                        <div class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">AWB Number</p>
-                            <p class="m-0 text-end">{{ activeCanvas.awb }}</p>
-                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -165,7 +164,11 @@ export default {
         },
         hideCanvas() {
             return this.$store.dispatch("meesho/hideCanvas");
-        }
+        },
+        // toggleInnerOffcanvas(bootstrap) {
+        //     const innerOffcanvas = new bootstrap.Offcanvas(this.$refs.innerOffcanvas);
+        //     innerOffcanvas.toggle();
+        // },
     },
 }
 </script>

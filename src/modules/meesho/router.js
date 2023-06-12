@@ -50,7 +50,14 @@ export default [
                     {
                         path: 'overview',
                         name: 'Return-Overview',
-                        component: () => import("./views/Return/OverviewPage.vue")
+                        component: () => import("./views/Return/OverviewPage.vue"),
+                        // children: [
+                        //     {
+                        //         path: '/productPerformance',
+                        //         name: 'Product-Performance',
+                        //         component: () => import("./views/Return/ProductPerformance.vue")
+                        //     },
+                        // ]
                     },
                     {
                         path: 'tracking',
@@ -113,21 +120,21 @@ export default [
                         path: '/inventory/blocked',
                         name: 'Inventory-Blocked',
                         // component: () => import("./views/inventory/BlockedPage.vue"),
-                        children:[
+                        children: [
                             {
                                 path: 'duplicate',
-                                name:'Inventory-Blocked-Duplicate',
-                                component:() => import("./views/inventory/DuplicatePage.vue")
+                                name: 'Inventory-Blocked-Duplicate',
+                                component: () => import("./views/inventory/DuplicatePage.vue")
                             },
                             {
                                 path: 'poorquality',
-                                name:'Inventory-Blocked-PoorQuality',
-                                component:() => import("./views/inventory/PoorPage.vue")
+                                name: 'Inventory-Blocked-PoorQuality',
+                                component: () => import("./views/inventory/PoorPage.vue")
                             },
                             {
                                 path: 'other',
-                                name:'Inventory-Blocked-Other',
-                                component:() => import("./views/inventory/OtherPage.vue")
+                                name: 'Inventory-Blocked-Other',
+                                component: () => import("./views/inventory/OtherPage.vue")
                             },
                         ]
                     },
