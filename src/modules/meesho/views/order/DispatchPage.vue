@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="">
+        <div class="d-flex gap-2">
             <div class="form-floating mb-3">
                 <input type="date" class="form-control" v-model="startdate" id="floatingInput">
                 <label for="floatingInput">Start Date</label>

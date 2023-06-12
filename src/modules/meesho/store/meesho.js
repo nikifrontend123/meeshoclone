@@ -61,11 +61,28 @@ export default {
                 oid: '1325462',
                 name: 'Stylish western girl dress',
                 img: 'https://images.meesho.com/images/products/192854756/nfqbt_400.webp',
-                qty: '1',
-                size: 'S',
-                skuid: 'DNB109',
-                meeshoid: '8e452xw',
-                suborderid: '1235464',
+                detial: [
+                    {
+                        name: 'Quantity',
+                        value: '1 Unit'
+                    },
+                    {
+                        name: 'Size',
+                        value: 'S'
+                    },
+                    {
+                        name: 'SKU ID',
+                        value: 'DNB109'
+                    },
+                    {
+                        name: 'Meesho ID',
+                        value: '54s564'
+                    },
+                    {
+                        name: 'Sub Order ID',
+                        value: '12456'
+                    },
+                ],
                 date: '10 Jun',
                 time: '10.38 am',
                 label: 'Downloaded',
@@ -76,11 +93,28 @@ export default {
                 oid: '1325462',
                 name: 'Stylish western girl dress',
                 img: 'https://images.meesho.com/images/products/191979382/bf6sa_400.webp',
-                qty: '1',
-                size: 'S',
-                skuid: 'DNB109',
-                meeshoid: '8e452xw',
-                suborderid: '1235464',
+                detial: [
+                    {
+                        name: 'Quantity',
+                        value: '1 Unit'
+                    },
+                    {
+                        name: 'Size',
+                        value: 'M'
+                    },
+                    {
+                        name: 'SKU ID',
+                        value: 'AFB109'
+                    },
+                    {
+                        name: 'Meesho ID',
+                        value: '64js64'
+                    },
+                    {
+                        name: 'Sub Order ID',
+                        value: '12236'
+                    },
+                ],
                 date: '10 Jun',
                 time: '10.38 am',
                 label: 'Downloaded',
@@ -89,77 +123,34 @@ export default {
         ],
         inventory: [
             {
-                id: 1,
-                name: 'Pretty Partywear Women Top & Bottom Sets',
-                img: 'https://images.meesho.com/images/products/192854756/nfqbt_400.webp',
-                detail: [
-                    {
-                        text: 'Catalog ID',
-                        number: '320451',
-                    },
-                    {
-                        text: 'Category',
-                        number: 'asdasd',
-                    },
-                    {
-                        text: 'SKUs',
-                        number: '4',
-                    },
-                    {
-                        text: 'Ratings',
-                        number: '4',
-                        icon: 'bi bi-star-fill'
-                    },
-                    {
-                        text: 'Order in Last 30 Days',
-                        number: '935',
-                    },
-                ],
-                category: 'Top & Bottom Sets',
-                sku: '4',
-                ratings: '4',
-                order: '923',
-                outofstock: '0',
-                lowstock: '3',
-                activation: 'Delayed'
+                id:1,
+                name:'Pretty Partywear Women Top & Bottom Sets',
+                img:'https://images.meesho.com/images/products/192854756/nfqbt_400.webp',
+                catalogid:'320451',
+                category:'Top & Bottom Sets',
+                sku:'4',
+                ratings:'4',
+                order:'923',
+                outofstock:'0',
+                lowstock:'3',
+                activation:'Delayed'
             },
             {
-                id: 2,
-                name: 'Partywear Women Top',
-                img: 'https://images.meesho.com/images/products/191979382/bf6sa_400.webp',
-                detail: [
-                    {
-                        text: 'Catalog ID',
-                        number: '320451',
-                    },
-                    {
-                        text: 'Category',
-                        number: 'asdasd',
-                    },
-                    {
-                        text: 'SKUs',
-                        number: '4',
-                    },
-                    {
-                        text: 'Ratings',
-                        number: '4',
-                        icon: 'bi bi-star-fill'
-                    },
-                    {
-                        text: 'Order in Last 30 Days',
-                        number: '935',
-                    },
-                ],
-                catalogid: '933451',
-                category: 'Top Sets',
-                sku: '5',
-                ratings: '3.7',
-                order: '623',
-                outofstock: '0',
-                lowstock: '5',
-                activation: 'Delayed'
+                id:2,
+                name:'Partywear Women Top',
+                img:'https://images.meesho.com/images/products/191979382/bf6sa_400.webp',
+                catalogid:'933451',
+                category:'Top Sets',
+                sku:'5',
+                ratings:'3.7',
+                order:'623',
+                outofstock:'0',
+                lowstock:'5',
+                activation:'Delayed'
             },
         ],
+        activeInventory: {},
+        activeProduct:{},
         returnSummries: [
             {
                 id: 1,
@@ -228,79 +219,7 @@ export default {
 
         ],
         activeCanvas: {},
-        activeInventory: {},
-        intransits: [
-            {
-                id: 1,
-                orderID: 788483440489,
-                name: 'Urbane Elegant Women Top',
-                details: [
-                    {
-                        name: 'Quantity',
-                        value: '1 unit'
-                    },
-                    {
-                        name: 'Size',
-                        value: 'L'
-                    },
-                    {
-                        name: 'SKU ID',
-                        value: 'D004_GREY'
-                    },
-                    {
-                        name: 'Return Shipping Fee',
-                        value: 'Courier Return(RTO)'
-                    },
-                    {
-                        name: 'AWB Number',
-                        value: 10009680888
-                    },
-                ],
-                shipmentdetails: [
-                    {
-                        name: 'Sub order ID',
-                        value: 788483440489
-                    },
-                    {
-                        name: 'Return type',
-                        value: 'Courier Return(RTO)'
-                    },
-                    {
-                        name: 'Primary Return Reason',
-                        value: 'N/A'
-                    },
-                    {
-                        name: 'Secondary Return Reason',
-                        value: 'N/A'
-                    },
-                    {
-                        name: 'Return Shipping Fee',
-                        value: '0'
-                    },
-                    {
-                        name: 'Courier Partner',
-                        value: 'Ecom Express'
-                    },
-                    {
-                        name: 'AWB Number',
-                        value: 10009680888
-                    },
-                ],
-                img: 'images/c5.jpg',
-                qty: '1 unit',
-                size: 'S',
-                Sku: 'D222',
-                category: 'Top & Bottom Sets',
-                shippingFee: 0,
-                reason: 'N/A',
-                returnType: 'Courier Return(RTO)',
-                awb: 'SF627219517FPL',
-                status: 'Delivering Today',
-                courierBy: 'Shadowfax'
-            },
-
-        ],
-        activeIntransit: {}
+        activeInventory:{},
     },
     getters: {
         getBottomNavMenuItems(state) {
@@ -326,15 +245,9 @@ export default {
         },
         getActiveInventory(state) {
             return state.activeInventory;
-        },
-        getIntransits(state) {
-            return state.intransits;
-        },
-        getActiveIntransit(state) {
-            return state.activeIntransit;
-        },
+        }
     },
-
+    
     mutations: {
         selectCanvas(state, canvas) {
             state.activeCanvas = canvas;
@@ -347,13 +260,7 @@ export default {
         },
         hideInventory(state) {
             state.activeInventory = {};
-        },
-        selectIntransit(state, intransit) {
-            state.activeIntransit = intransit;
-        },
-        hideIntransit(state) {
-            state.activeIntransit = {};
-        },
+        }
     },
     actions: {
         selectCanvas({ commit }, canvas) {
@@ -368,12 +275,17 @@ export default {
         hideInventory({ commit }) {
             commit('hideInventory');
         },
+        selectProduct({commit}, inventory){
+            commit('selectProduct', inventory);
+        },
+        hideProduct({commit}){
+            commit('hideProduct');
+        },
         selectIntransit({ commit }, intransit) {
             commit("selectIntransit", intransit);
         },
         hideIntransit({ commit }) {
             commit("hideIntransit");
         },
-
     }
 }

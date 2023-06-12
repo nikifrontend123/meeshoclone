@@ -1,5 +1,9 @@
 <template>
     <div>
+        <div class="d-flex justify-content-between container p-2">
+            <b>Order/OnHold</b>
+            <b><i class="bi bi-search"></i><i class="bi bi-question-circle ms-2"></i></b>
+        </div>
         <OrderLink></OrderLink>
         <div class="">
             <div class="input-group mb-3 container mt-2">
@@ -36,7 +40,7 @@
             </div>
         </div>
         <BottomNav></BottomNav>
-        
+
     </div>
 </template>
 

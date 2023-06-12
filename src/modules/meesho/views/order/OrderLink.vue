@@ -1,9 +1,11 @@
 <template>
     <nav>
-        <div class="nav nav-tabs py-2 d-flex overflow-x-auto flex-nowrap ws-nowarp align-items-center"
+        <div class="nav nav-tabs py-2 d-flex overflow-x-scroll flex-nowrap ws-nowarp align-items-center"
             style="font-size: 12px; font-weight: 500;" id="nav-tab" role="tablist">
-            <RouterLink v-for="(link, index) in links" :key="index" class="nav-link ws-nowarp text-normal"
-                :class="currentRouteName === link.route ? 'active' : ''" :to="{ name: link.route }">
+            <RouterLink 
+                v-for="(link, index) in links" :key="index" class="nav-link ws-nowarp"
+                :class="currentRouteName === link.route ? 'active' : ''" 
+                :to="{ name: link.route }">
                 {{ link.label }}
             </RouterLink>
         </div>
@@ -34,7 +36,7 @@ export default {
 </script>
 
 <style>
-.ws-nowarp {
-    white-space: nowrap;
-} 
+    .ws-nowarp {
+        white-space: nowrap;
+    }
 </style>
