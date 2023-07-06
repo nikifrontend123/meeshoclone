@@ -49,7 +49,7 @@
 
 
         <div class="">
-            <div class="container mb-2 border" v-for="(inventory, index) in inventories" :key="index">
+            <div class="container mb-2 border" v-for="(inventory, key) in inventories" :key="key">
                 <div class="w-100">
                     <p class="fs-5 my-2" style="font-weight: 500;">{{ inventory.name }}</p>
                     <div class="d-flex">
@@ -57,7 +57,9 @@
                             <img :src="inventory.img" style="width: 100px; height: 120px; object-fit: cover;">
                         </div>
                         <div class="ms-2 w-75">
-                            <div v-for="(d, key) in inventory.detail" :key="key"
+
+
+                            <div v-for="(d, index) in inventory.detail" :key="index"
                                 class="d-flex justify-content-between border-bottom py-1">
                                 <p class="m-0 text-secondary">{{ d.text }}</p>
                                 <p class="m-0 text-end">{{ d.number }}<sup><i :class="d.icon"></i></sup></p>
@@ -81,16 +83,16 @@
 
             <!-- ----Boost Product Canvas---- -->
             <div v-if="Object.keys(activeInventory).length !== 0">
-                <div class="offcanvas offcanvas-bottom show" style="height: 70vh;" data-bs-backdrop="static" tabindex="-1"
-                    id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                <div class="offcanvas offcanvas-bottom show" style="height: 75vh;" tabindex="-1" id="offcanvasExample"
+                    aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header border">
-                        <h5 class="offcanvas-title" id="staticBackdropLabel">New Ad Campaign</h5>
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">New Ad Campaign</h5>
                         <button type="button" class="btn" @click="hideInventory()"><i class="bi bi-x fs-4"></i></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div class="container border">
+                        <div class="container ">
                             <div class="">
-                                <h5>Reach more buyers & increase orders with Ad</h5>
+                                <p class="fs-6 fw-bold">Reach more buyers & increase orders with Ad</p>
 
                                 <div v-for="(camp, index) in campaign" :key="index" class="d-flex justify-content-between">
                                     <p class="m-0">{{ camp.name }}</p>
@@ -98,7 +100,7 @@
                                 </div>
 
                                 <div class="d-flex justify-content-end my-2">
-                                    <button class="btn btn-success ">Cancel campaign anytime</button>
+                                    <p class="text-success m-0 fw-bold">Cancel campaign anytime</p>
                                 </div>
                             </div>
 
@@ -109,10 +111,12 @@
                                 <div class="ms-2 w-75">
                                     <div class="">
                                         <h6>{{ activeInventory.name }}</h6>
-                                        <div v-for="(d, key) in activeInventory.detail" :key="key"
-                                            class="d-flex justify-content-between border-bottom py-1">
-                                            <p class="m-0 text-secondary">{{ d.text }}</p>
-                                            <p class="m-0 text-end">{{ d.number }}</p>
+                                        <div v-for="(d, index) in activeInventory.detail" :key="index" class="">
+                                            <div class="d-flex justify-content-between">
+                                                <p v-if="index === 0" class="m-0 text-secondary">Catalog ID</p>
+                                                <p v-if="index === 0" class="m-0 text-end">{{
+                                                    getDetailValue(activeInventory, 'Catalog ID') }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +131,7 @@
 
             <!-- ---View Product canvas----- -->
             <div v-if="Object.keys(activeProduct).length !== 0">
-                <div class="offcanvas offcanvas-bottom show" style="height: 70vh;" data-bs-backdrop="static" tabindex="-1"
+                <div class="offcanvas offcanvas-bottom show" style="height: 100vh;" data-bs-backdrop="static" tabindex="-1"
                     id="staticBackdrop" aria-labelledby="staticBackdropLabel">
                     <div class="offcanvas-header border">
                         <h5 class="offcanvas-title" id="staticBackdropLabel"><i class="bi bi-arrow-left"></i> </h5>
@@ -136,20 +140,64 @@
                     <div class="offcanvas-body">
 
                         <h4>{{ activeProduct.name }}</h4>
-                        <div class="bg-secondary px-2">
+                        <div v-for="(d, index) in activeProduct.detail" :key="index"
+                            class="d-flex justify-content-between border-bottom py-1">
+                            <p class="m-0 text-secondary">{{ d.text }}</p>
+                            <p class="m-0 text-end">{{ d.number }}<sup><i :class="d.icon"></i></sup></p>
+                        </div>
+                        <div class="bg-secondary mt-2 p-1">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                    SKUs {{ activeProduct.index }}
+                                    SKUs ({{ activeProduct.detail.length }})
                                 </label>
                             </div>
                         </div>
-                        <div v-for="(d, key) in activeProduct.detail" :key="key"
-                            class="d-flex justify-content-between border-bottom py-1">
-                            <p class="m-0 text-secondary">{{ d.text }}</p>
-                            <p class="m-0 text-end">{{ d.number }}</p>
-                        </div>
+                        <div class="" v-for="(inventory, key) in inventories" :key="key">
+                            <div class=" p-1">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                <label class="form-check-label ms-1" for="flexCheckDefault1"
+                                    style="font-size: 16px ; font-weight: 600; width: 80%;">
+                                    {{ inventory.name }}
+                                </label>
+                            </div>
+                            <div class="container mb-2 border">
+                                <div class="w-100">
+                                    <div class="d-flex">
+                                        <div class="">
+                                            <img :src="inventory.img"
+                                                style="width: 100px; height: 120px; object-fit: cover;">
+                                        </div>
+                                        <div class="ms-2 w-75">
 
+
+                                            <div v-for="(d, index) in inventory.detail" :key="index"
+                                                class="d-flex justify-content-between border-bottom py-1">
+                                                <p class="m-0 text-secondary">{{ d.text }}</p>
+                                                <p class="m-0 text-end">{{ d.number }}<sup><i :class="d.icon"></i></sup></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2 border-top"
+                                    style="font-size: 14px; font-weight: 500;">
+                                    <div class="">
+                                        <p class="m-0">Status <span class="text-danger">Low Stock</span></p>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center"
+                                        style="font-size: 12px; font-weight:500;">
+                                        <i class="bi bi-pencil"></i>
+                                        Edit
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center"
+                                        style="font-size: 12px; font-weight:500;">
+                                        <i class="bi bi-three-dots"></i>
+                                        More
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -205,7 +253,14 @@ export default {
         hideProduct() {
             return this.$store.dispatch('meesho/hideProduct');
         },
-       
+        // getDetailNumber(details, text) {
+        //     const detail = details.find((inventory) => inventory.text === text);
+        //     return detail ? detail.number : '';
+        // },
+        getDetailValue(inventory, detailText) {
+            const detail = inventory.detail.find((d) => d.text === detailText);
+            return detail ? detail.number : '';
+        },
     }
 }
 </script>

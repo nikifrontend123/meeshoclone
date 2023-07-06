@@ -1,5 +1,5 @@
 <template>
-    <div style="padding-bottom: 100px;">
+    <div style="padding-bottom: 100px  ;">
         <InventoryLink></InventoryLink>
         <BlockedLinks></BlockedLinks>
         <div class="">
