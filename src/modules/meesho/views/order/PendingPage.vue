@@ -42,10 +42,10 @@
                 <button class="btn border w-100 rounded-0 w-25 " data-bs-toggle="offcanvas" data-bs-target="#sla"
                     aria-controls="sla" id="button-addon1">SLA</button>
 
-                <button class="btn btn-dark rounded-0 w-25" data-bs-toggle="offcanvas" data-bs-target="#dispatch"
+                <button class="btn border w-100 rounded-0 w-25" data-bs-toggle="offcanvas" data-bs-target="#dispatch"
                     aria-controls="dispatch" id="button-addon1">Dispatch</button>
 
-                <button class="btn btn-dark rounded-0 w-25" data-bs-toggle="offcanvas" data-bs-target="#filter"
+                <button class="btn border w-100 rounded-0 w-25" data-bs-toggle="offcanvas" data-bs-target="#filter"
                     aria-controls="filter" id="button-addon1">Filter</button>
 
                 <div class="offcanvas offcanvas-bottom " style="height:35vh !important;" data-bs-scroll="true"

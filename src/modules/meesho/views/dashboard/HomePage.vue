@@ -3,7 +3,8 @@
         <div class="p-2">
             <div class="d-flex justify-content-between ">
                 <h5 class="m-0">Welcome back, DNB FASHION</h5>
-                <i class="bi bi-question-circle d-flex fs-5 text-secondary"></i>
+                <!-- <i class="bi bi-question-circle d-flex fs-5 text-secondary"></i> -->
+                <TopNav></TopNav>
             </div>
             <small class="text-secondary">Manage and grow your business</small>
         </div>
@@ -56,9 +57,10 @@
 
 <script>
 import BottomNav from '@/components/common/BottomNav.vue';
+import TopNav from '../navbar/TopNav.vue';
 
 export default {
-    components: { BottomNav},
+    components: { BottomNav, TopNav },
     computed: {
         stats() {
             return this.$store.getters['meesho/getDashboardStats']

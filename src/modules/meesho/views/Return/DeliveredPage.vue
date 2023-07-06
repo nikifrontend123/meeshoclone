@@ -26,15 +26,15 @@
 
 
             <div class="">
-                <div class="offcanvas offcanvas-bottom " style="height:80vh !important;" data-bs-scroll="true"
-                      tabindex="-1" id="filter" aria-labelledby="filter">
+                <div class="offcanvas offcanvas-bottom " style="height:80vh !important;" data-bs-scroll="true" tabindex="-1"
+                    id="filter" aria-labelledby="filter">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="filter">Filters</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body  bg-light">
                         <div class="">
-                            
+
                             <div class="position-absolute bottom-0 w-100">
                                 <div class="d-flex justify-content-evenly ">
                                     <p class="m-0">0 Orders</p>
@@ -46,8 +46,10 @@
 
                         </div>
 
-
                     </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center mt-4">
+                    <img src="@/assets/ss.png" alt="">
                 </div>
             </div>
 
@@ -65,7 +67,7 @@ import TrackingLinks from './TrackingLinks.vue';
 
 export default {
     name: "DeliveredPage",
-    components: { ReturnLinks, TrackingLinks, ReturnCreadted, BottomNav }
+    components: { ReturnLinks, TrackingLinks, ReturnCreadted, BottomNav },
 }
 </script>
 

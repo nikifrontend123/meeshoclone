@@ -20,7 +20,7 @@ export default {
         currentRoute() {
             return this.$route.name;
         }
-    },
+    }
      
 }
 </script>

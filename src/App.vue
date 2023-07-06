@@ -20,5 +20,14 @@ a {
 .nav-tabs .nav-link {
   color: black;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  border-bottom: 2px solid red;
+}
 </style>
  

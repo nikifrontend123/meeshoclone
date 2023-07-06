@@ -42,7 +42,9 @@
                 <p><i class="bi bi-play-btn"></i> Learn Hub</p>
                 <p><i class="bi bi-bell"></i> Notice Board</p>
                 <p><i class="bi bi-headset"></i> Support</p>
-                <p><i class="bi bi-gear"></i> Setting</p>
+                <RouterLink to="/setting">
+                    <p><i class="bi bi-gear"></i> Setting</p>
+                </RouterLink>
                 <p><i class="bi bi-box-arrow-right"></i> Logout</p>
             </div>
         </div>

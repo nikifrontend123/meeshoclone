@@ -14,11 +14,7 @@ export default [
                 name: 'Home',
                 component: () => import("./views/dashboard/HomePage.vue")
             },
-            {
-                path: '/order/onhold',
-                name: 'Order',
-                component: () => import("./views/order/OrderPage.vue")
-            },
+            
             {
                 path: '/order/onhold',
                 name: 'Order-OnHold',
@@ -150,6 +146,31 @@ export default [
                 path: '/menu',
                 name: 'Menu',
                 component: () => import("./views/menu/MenuPage.vue")
+            },
+            {
+                path: '/setting',
+                name: 'Setting',
+                component: () => import("./views/settings/SettingPage.vue")
+            },
+            {
+                path: '/changepassword',
+                name: 'ChangePassword',
+                component: () => import("./views/settings/ChangePassword.vue")
+            },
+            {
+                path: '/whatsappnotification',
+                name: 'WhatsappNotification',
+                component: () => import("./views/settings/WhatsAppNoti.vue")
+            },
+            {
+                path: '/legal',
+                name: 'Legal',
+                component: () => import("./views/settings/LegalPage.vue")
+            },
+            {
+                path: '/emailnoti',
+                name: 'EmailNotification',
+                component: () => import("./views/settings/EmailNoti.vue")
             },
 
 

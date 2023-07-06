@@ -50,6 +50,9 @@
                     </div>
                 </div>
             </div>
+            <div class="d-flex justify-content-center align-items-center mt-4">
+                    <img src="@/assets/ss.png" alt="">
+                </div>
 
 
         </div>
