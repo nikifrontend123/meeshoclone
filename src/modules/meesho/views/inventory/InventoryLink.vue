@@ -11,10 +11,13 @@
 
             <RouterLink class="nav-link ws-nowarp " :class="currentRouteName('Inventory-Active') ? 'active' : ''"
                 :to="{ name: 'Inventory-Active-Stock' }">Active</RouterLink>
+
             <RouterLink class="nav-link " :class="currentRouteName('Inventory-Pending') ? 'active' : ''"
                 :to="{ name: 'Inventory-Pending' }">Active Pending</RouterLink>
+
             <RouterLink class="nav-link " :class="currentRouteName('Inventory-Blocked') ? 'active' : ''"
                 :to="{ name: 'Inventory-Blocked-Duplicate' }">Blocked</RouterLink>
+                
             <RouterLink class="nav-link " :class="currentRouteName('Inventory-Paused') ? 'active' : ''"
                 :to="{ name: 'Inventory-Paused' }">Paused</RouterLink>
         </div>

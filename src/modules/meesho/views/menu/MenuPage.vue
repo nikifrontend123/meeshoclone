@@ -1,6 +1,6 @@
 <template>
-    <div style="padding-bottom: 70px;">
-        <h5 class="p-2">Menu</h5>
+    <div class="bg-light">
+        <!-- <h5 class="p-2">Menu</h5> -->
         <div class="d-flex container border py-2">
             <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
                 style="height: 60px; width: 60px;"><i class="bi bi-shop text-primary fs-5"></i>
@@ -18,7 +18,9 @@
         <div class="">
             <p class="text-secondary border ps-2 m-0">Manage Business</p>
             <div class="border container pt-2">
-                <p><i class="bi bi-journal-arrow-up"></i> Catalog Upload</p>
+                <router-link to="/menu/bulk-upload" class="text-decoration-none text-dark">
+                    <p><i class="bi bi-journal-arrow-up"></i> Digital Studio</p>
+                </router-link>
                 <p><i class="bi bi-wallet2"></i> Payments</p>
             </div>
         </div>
@@ -49,16 +51,11 @@
             </div>
         </div>
 
-        <BottomNav></BottomNav>
     </div>
 </template>
 
 <script>
-import BottomNav from '@/components/common/BottomNav.vue';
 
 export default {
-    components: { BottomNav }
 }
 </script>
-
-<style lang="scss" scoped></style>

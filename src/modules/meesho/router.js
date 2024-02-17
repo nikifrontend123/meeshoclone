@@ -144,8 +144,30 @@ export default [
             },
             {
                 path: '/menu',
-                name: 'Menu',
-                component: () => import("./views/menu/MenuPage.vue")
+                children:[
+                    {
+                        path:'bulk-upload',
+                        name:'Menu-Bulk-Upload',
+                        component:() => import('./views/menu/BulkUpload.vue')
+                    }, 
+                    {
+                        path:'single-upload',
+                        children:[
+                            {
+                                path:'all',
+                                name:'Menu-Single-Upload-All',
+                                component:() => import('./views/menu/AllSingleUpload.vue')
+                            },
+                            {
+                                path:'basic',
+                                name:'Menu-Single-Upload-Basic',
+                                component:() => import('./views/menu/BasicDetails.vue')
+                            },
+                        ]
+                    }, 
+                ]
+                // name: 'Menu',
+                // component: () => import("./views/menu/MenuPage.vue")
             },
             {
                 path: '/setting',

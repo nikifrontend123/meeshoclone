@@ -26,12 +26,12 @@ export default {
                 icon: 'bi bi-x-octagon',
                 route: 'Inventory-Active-Stock',
             },
-            {
-                id: 5,
-                name: 'Menu',
-                icon: 'bi bi-journal-check',
-                route: 'Menu',
-            },
+            // {
+            //     id: 5,
+            //     name: 'Menu',
+            //     icon: 'bi bi-journal-check',
+            //     route: 'Menu',
+            // },
         ],
         dashboardStats: [
             {
