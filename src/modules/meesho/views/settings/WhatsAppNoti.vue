@@ -14,8 +14,8 @@
             <input class="w-75 ms-2 p-2" type="number" placeholder="Mobile Number" v-model="phoneNumber"
                 @input="checkPhoneNumber" />
         </div>
-        <div class="d-flex justify-content-center w-100 position-absolute bottom-0 my-3">
-            <button :disabled="disableButton" class="btn btn-success w-100 mx-2">Subscribe</button>
+        <div class="d-flex justify-content-center w-100 my-3" >
+            <button :disabled="disableButton" class="btn btn-success w-100 mx-2">Receive OTP</button>
         </div>
     </div>
 </template>
